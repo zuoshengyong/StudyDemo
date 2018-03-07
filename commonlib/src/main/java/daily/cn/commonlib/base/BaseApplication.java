@@ -1,4 +1,4 @@
-package daily.cn.commonlib;
+package daily.cn.commonlib.base;
 
 import android.app.Application;
 

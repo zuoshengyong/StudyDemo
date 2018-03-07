@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--表示对外开放的ID-->
+    <item type="id" name="host_module_root_view" />
+</resources>

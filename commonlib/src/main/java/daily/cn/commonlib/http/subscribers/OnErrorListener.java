@@ -6,5 +6,5 @@ package daily.cn.commonlib.http.subscribers;
  * time: 2018/03/05
  */
 public interface OnErrorListener {
-    void onError(Throwable e);
+    void onError();
 }

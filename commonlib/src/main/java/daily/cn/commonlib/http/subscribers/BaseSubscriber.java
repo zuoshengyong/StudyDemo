@@ -54,13 +54,14 @@ public class BaseSubscriber<T> implements Observer<T>, CancelRequestListener {
 
     @Override
     public synchronized void onError(Throwable e) {
+        e.printStackTrace();
         dismissProgressDialog();
         Logger.getLogger().e("onError,errorMessage:%s,error:%s",e.getMessage(),e);
         if(!NetUtil.isNetAvailable(context)){
             showToast("网络不可用，请检查后再试！");
         }
         if (onErrorListener != null) {
-            onErrorListener.onError(e);
+            onErrorListener.onError();
             return;
         }
     }

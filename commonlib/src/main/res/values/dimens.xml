@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="host_title_bar_height">44dp</dimen>
+
+    <dimen name="host_menu_item_width">176dp</dimen> <!--右上角pop菜单宽度-->
+</resources>

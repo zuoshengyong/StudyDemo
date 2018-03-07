@@ -3,4 +3,7 @@
     <color name="transparent">#00000000</color>
     <color name="white_color">#FFFFFF</color>
     <color name="app_common_color">#FF9947</color>
+    <color name="host_app_blue">#4161E0</color>
+    <color name="host_black_10_transparent">#19000000</color> <!--按压背景变暗-->
+    <color name="common_color_light">#30FF9947</color>
 </resources>
