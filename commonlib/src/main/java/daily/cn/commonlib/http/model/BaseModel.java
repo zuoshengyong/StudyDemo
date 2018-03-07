@@ -3,6 +3,7 @@ package daily.cn.commonlib.http.model;
 
 import com.google.gson.Gson;
 
+import daily.cn.commonlib.CommonConstants;
 import daily.cn.commonlib.Logger;
 import daily.cn.commonlib.http.RxActivity;
 import daily.cn.commonlib.http.RxFragment;
@@ -97,7 +98,7 @@ public class BaseModel {
             }
         }
         if (httpResult != null) {
-            if (!"200".equalsIgnoreCase(httpResult.getCode())) {
+            if (!CommonConstants.HttpCode.CODE_SUCCESS.equalsIgnoreCase(httpResult.getCode())) {
                 Logger.getLogger().e("httpCode:%s,httpMessage:%s",httpResult.getCode(),httpResult.getMessage());
                 if ("300".equalsIgnoreCase(httpResult.getCode()) || "201".equalsIgnoreCase(httpResult.getCode())) {
                     return true;

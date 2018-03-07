@@ -1,9 +1,10 @@
-package daily.cn.commonlib.http.service;
+package daily.cn.studydemo.http;
 
 import java.util.Map;
 
+import daily.cn.commonlib.http.result.HttpListResult;
 import daily.cn.commonlib.http.result.HttpResult;
-import daily.cn.commonlib.http.util.ApiConstants;
+import daily.cn.studydemo.business.main.MainEntity;
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import retrofit2.http.Field;
@@ -44,4 +45,8 @@ public interface MainService {
 
     @POST
     Observable<ResponseBody> casLoginForWeb(@Url String url);
+
+    @FormUrlEncoded
+    @POST(ApiConstants.BRIDGE_TRANSFER)
+    Observable<HttpResult<HttpListResult<MainEntity>>> getMainList(@Field("api_code") String apiCode, @FieldMap Map<String, String> param);
 }

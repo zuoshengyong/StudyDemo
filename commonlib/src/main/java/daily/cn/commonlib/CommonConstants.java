@@ -17,4 +17,10 @@ public class CommonConstants {
         public static final String PLUGIN_ID = "pluginId";//模块ID
         public static final String FRAGMENT_CLASS = "fragmentClass";//需要启动的fragment类
     }
+    /**
+     * 网络状态值
+     */
+    public static final class HttpCode{
+        public static final String CODE_SUCCESS="1";
+    }
 }

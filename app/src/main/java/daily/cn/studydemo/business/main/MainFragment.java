@@ -8,11 +8,11 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.Map;
 
-import daily.cn.commonlib.base.BaseFragment;
+import daily.cn.commonlib.CommonConstants;
 import daily.cn.commonlib.ToastUtil;
+import daily.cn.commonlib.base.BaseFragment;
 import daily.cn.commonlib.http.result.HttpListResult;
 import daily.cn.commonlib.http.result.HttpResult;
-import daily.cn.studydemo.AppConstants;
 import daily.cn.studydemo.R;
 import daily.cn.studydemo.business.other.BusinessFragment;
 
@@ -24,7 +24,7 @@ import daily.cn.studydemo.business.other.BusinessFragment;
  * </pre>
  */
 
-public class MainFragment extends BaseFragment implements MainContract.View<HttpListResult<MiMoneyEntity>>{
+public class MainFragment extends BaseFragment implements MainContract.View<HttpListResult<MainEntity>>{
 
     private TextView tv_content;
 
@@ -66,8 +66,8 @@ public class MainFragment extends BaseFragment implements MainContract.View<Http
     }
 
     @Override
-    public void update2LoadData(HttpResult<HttpListResult<MiMoneyEntity>> result) {
-        if(AppConstants.HttpCode.CODE_SUCCESS.equalsIgnoreCase(result.getCode())){
+    public void update2LoadData(HttpResult<HttpListResult<MainEntity>> result) {
+        if(CommonConstants.HttpCode.CODE_SUCCESS.equalsIgnoreCase(result.getCode())){
             setContentShown(true);
             ToastUtil.showToast(getActivity(),"网络请求成功");
             tv_content.setText(result.toString());

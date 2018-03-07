@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class BaseServiceUtil {
     private static final int DEFAULT_TIMEOUT = 50;
-    private static final CommonInterceptor interceptor = new CommonInterceptor();
+    private static final TestCommonInterceptor interceptor = new TestCommonInterceptor();
     private static final OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder()
             .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
             .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
@@ -44,11 +44,11 @@ public class BaseServiceUtil {
         clientBuilder.interceptors().add(interceptor);
 
         // 设置证书
-        try {
-            clientBuilder.sslSocketFactory(RqbTrustManager.getInstance().getSSLSocketFactory());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            clientBuilder.sslSocketFactory(RqbTrustManager.getInstance().getSSLSocketFactory());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         OkHttpClient client = clientBuilder.build();
         Retrofit retrofit = retrofitBuilder.client(client).build();
         return retrofit.create(serviceClass);
